@@ -2,15 +2,20 @@
 #include "train.h"
 
 void Train::addCage(bool light) {
-if (first && last) {
-last->next = create(true);
-last->next->prev = last;
-last = last->next;
-last->next = first;
-first->prev = last;
+if (!first) {
+first = create(light);
+current = first;
 } else {
-first = last = create(true);
-}}
+current->next = create(light);
+current->next->prev = current;
+current = current->next;
+if (!current->next) {
+current->next = first;
+} else {
+first->prev = current;
+}
+}
+}
 
 int Train::getLength() {
 Cage *temp = first;
