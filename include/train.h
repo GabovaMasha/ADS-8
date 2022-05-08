@@ -19,7 +19,7 @@ item->next = item->prev = nullptr;
 return item;
 }
  public:
-  Train() : countOp(0), first(nullptr), last(nullptr) {}
+  Train() : countOp(0), first(nullptr), current(nullptr) {}
   void addCage(bool light); // добавить вагон с начальным состоянием лампочки
   int getLength();          // вычислить длину поезда
   int getOpCount();         // вернуть число переходов (из вагона в вагон)
