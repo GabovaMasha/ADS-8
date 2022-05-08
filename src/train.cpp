@@ -2,7 +2,7 @@
 #include "train.h"
 
 void Train::addCage(bool light) {
-if (!first) {
+if (first != nullptr) {
 first = create(light);
 current = first;
 } else {
@@ -18,10 +18,10 @@ first->prev = current;
 }
 
 int Train::getLength() {
-Cage *temp = first;
 int i = 0;
 int ct = 0;
 first->light = true;
+Cage *temp = first;
 while (true) {
 temp = temp->next;
 ct++;
