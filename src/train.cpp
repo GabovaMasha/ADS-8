@@ -27,7 +27,7 @@ i = 0;
 while (i < ct) {
 temp = temp->prev;
 countOp++;
-i++
+i++;
 }
 if (!temp->light) {
 return ct;
